@@ -9,7 +9,7 @@ sys_sample_code
 ,column_number
 ,test_type
 ,lab_matrix_code
-,analysis_location
+,coalesce(analysis_location, 'LB') as analysis_location
 ,basis
 ,null as container_id
 ,dilution_factor
@@ -22,9 +22,9 @@ sys_sample_code
 ,lab_name_code
 ,null as qc_level
 ,lab_sample_id
-,percent_moisture
-,null as subsample_amount
-,null as subsample_amount_unit
+,coalesce(percent_moisture, '0.0') as percent_moisture
+,coalesce(subsample_amount,'0.00001') as subsample_amount
+,coalesce(subsample_amount_unit,'mL') as subsample_amount_unit
 ,null as analyst_name
 ,null as instrument_id
 ,null as comment

@@ -21,7 +21,7 @@ select
 ,reporting_detection_limit
 ,quantitation_limit
 ,result_unit
-,detection_limit_unit
+,coalesce(detection_limit_unit, result_unit) as detection_limit_unit
 ,tic_retention_time
 ,result_comment
 	,validator_qualifiers
